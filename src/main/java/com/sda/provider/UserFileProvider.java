@@ -46,7 +46,8 @@ public class UserFileProvider implements UserProvider {
                 .name(lineResult[0])
                 .lastName(lineResult[1])
                 .login(lineResult[2])
-                .password(lineResult[3])
+                .email(lineResult[3])
+                .password(lineResult[4])
                 .address(mapToAddress(lineResult))
                 .roles(mapToRoles(lineResult))
                 .build();
@@ -54,15 +55,15 @@ public class UserFileProvider implements UserProvider {
 
     private Address mapToAddress(String[] lineResult) {
         return Address.builder()
-                .street(lineResult[4])
-                .buildingNo(lineResult[5])
-                .apartmentNo(lineResult[6])
-                .postalCode(lineResult[7])
+                .street(lineResult[5])
+                .buildingNo(lineResult[6])
+                .apartmentNo(lineResult[7])
+                .postalCode(lineResult[8])
                 .build();
     }
 
     private List<Role> mapToRoles(String[] lineResult) {
-        return Arrays.stream(lineResult[8].split("/"))
+        return Arrays.stream(lineResult[9].split("/"))
                 .map(Role::valueOf)
                 .collect(Collectors.toList());
     }
