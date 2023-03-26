@@ -19,7 +19,7 @@ class UserLoginControllerImplTest {
     private static final UserLoginData INCORRECT_USER_LOGIN_DATA = new UserLoginData("incorrectLogin", "incorrectPassword");
 
     private UserLoginControllerImpl userLoginController = new UserLoginControllerImpl(
-        new LocalUserLoginChecker()
+        new MockUserLoginChecker()
     );
 
     @Test
@@ -41,7 +41,7 @@ class UserLoginControllerImplTest {
     }
 
 
-    private class LocalUserLoginChecker implements UserLoginChecker {
+    private class MockUserLoginChecker implements UserLoginChecker {
         @Override
         public Optional<User> loginAndGet(UserLoginData userLoginData) {
             if (userLoginData.equals(CORRECT_USER_LOGIN_DATA)) {
