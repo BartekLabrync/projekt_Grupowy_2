@@ -38,13 +38,13 @@ public class UserDataFactory {
             ),
             List.of(USER));
 
-    private static final Set<User> exampleUserData = Set.of(
+    private static final Set<User> EXAMPLE_USER_DATA = Set.of(
             USER1,
             USER2
     );
 
     public static Set<User> getExampleUserData() {
-        return exampleUserData;
+        return EXAMPLE_USER_DATA;
     }
 
     public static User getExampleSingleUser() {
