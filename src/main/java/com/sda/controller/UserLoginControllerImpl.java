@@ -26,7 +26,7 @@ public class UserLoginControllerImpl implements UserLoginController {
     public View login(UserLoginData userLoginData) {
         Optional<User> user = userLoginChecker.loginAndGet(userLoginData);
         if (user.isPresent()) {
-            return new MainMenuView();
+            return new MainMenuView(user.get());
         }
         return new LoginView(Optional.of("Podano błędne dane logowania"));
     }

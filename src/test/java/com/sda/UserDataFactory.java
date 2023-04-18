@@ -38,6 +38,20 @@ public class UserDataFactory {
             ),
             List.of(USER));
 
+    private static final User USER3 = new User(
+            "Test",
+            "Test",
+            "test",
+            "test@gmail.com",
+            "test789",
+            new Address(
+                    "Testowa",
+                    "10",
+                    "2",
+                    "01-000"
+            ),
+            List.of(ADMIN));
+
     private static final Set<User> EXAMPLE_USER_DATA = Set.of(
             USER1,
             USER2
@@ -47,7 +61,13 @@ public class UserDataFactory {
         return EXAMPLE_USER_DATA;
     }
 
-    public static User getExampleSingleUser() {
+    public static User getExampleSingleUserAdmin() {
         return USER1;
+    }
+    public static User getExampleSingleUser() {
+        return USER2;
+    }
+    public static User getExampleSingleAdmin() {
+        return USER3;
     }
 }
