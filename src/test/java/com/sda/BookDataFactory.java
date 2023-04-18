@@ -23,7 +23,7 @@ public class BookDataFactory {
             new Author(
                     "TEST",
                     "TESTOwanie"),
-            LocalDate.parse("1/01/1900", formatter)
+            LocalDate.parse("1/01/1910", formatter)
     );
     private static final Set<Book> EXAMPLE_BOOK_DATA = Set.of(
             BOOK1,

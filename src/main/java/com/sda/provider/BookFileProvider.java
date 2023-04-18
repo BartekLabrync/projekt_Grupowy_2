@@ -56,7 +56,7 @@ public class BookFileProvider implements BookProvider {
 
     private LocalDate mapToPublicationDate(String[] lineResult) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
-        String date = lineResult[4];
+        String date = "1/01/" + lineResult[4];
 
         LocalDate localDate = LocalDate.parse(date, formatter);
         return localDate;
