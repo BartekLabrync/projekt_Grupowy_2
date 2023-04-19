@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class BooksViewController {
-    BookFileProvider bookFileProvider;
+    private final BookFileProvider bookFileProvider;
 
     public BooksViewController() {
         bookFileProvider = new BookFileProvider();

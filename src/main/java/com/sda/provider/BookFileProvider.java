@@ -2,7 +2,6 @@ package com.sda.provider;
 
 import com.sda.model.Author;
 import com.sda.model.Book;
-import com.sda.model.User;
 import lombok.Builder;
 
 import java.io.BufferedReader;
@@ -58,8 +57,7 @@ public class BookFileProvider implements BookProvider {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
         String date = "1/01/" + lineResult[4];
 
-        LocalDate localDate = LocalDate.parse(date, formatter);
-        return localDate;
+        return LocalDate.parse(date, formatter);
     }
 
     private Author mapToAuthor(String[] lineResult) {
