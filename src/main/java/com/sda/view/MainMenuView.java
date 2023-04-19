@@ -20,6 +20,7 @@ public class MainMenuView implements View {
     @Override
     public void display() {
         Map<Integer, MenuOption> menuOptions = mainMenuController.getMenuOptions(loggedUser);
+        System.out.println("\nMenu:");
         menuOptions.forEach((key, menuOption) -> System.out.println(key + ". " + menuOption.getMessage()));
         mainMenuController.getChoosenView(getData(), loggedUser).display();
     }

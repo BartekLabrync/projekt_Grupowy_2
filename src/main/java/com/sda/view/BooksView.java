@@ -1,15 +1,18 @@
 package com.sda.view;
 
 import com.sda.controller.BooksViewController;
+import com.sda.model.User;
 
 
 import java.util.Map;
 
 
 public class BooksView implements View {
-    private BooksViewController booksViewController;
+    private final User loggedUser;
+    private final BooksViewController booksViewController;
 
-    public BooksView() {
+    public BooksView(User loggedUser) {
+        this.loggedUser = loggedUser;
         this.booksViewController = new BooksViewController();
     }
 
@@ -21,6 +24,8 @@ public class BooksView implements View {
 
         Map<Integer, String> books = booksViewController.getBooks();
         books.forEach((key, book) -> System.out.println(key + ". " + book));
+
+        booksViewController.returnMainMenu(loggedUser).display();
     }
 
 }

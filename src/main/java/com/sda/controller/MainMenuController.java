@@ -29,7 +29,7 @@ public class MainMenuController {
             case ADD_NEW_USER:
                 return new UserView();
             case DISPLAY_BOOKS:
-                return new BooksView();
+                return new BooksView(loggedUser);
             case DISPLAY_MY_DATA:
                 return new DataView();
             case DISPLAY_USER_DATA:

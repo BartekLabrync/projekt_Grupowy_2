@@ -5,6 +5,8 @@ import com.sda.model.MenuOption;
 import com.sda.model.User;
 import com.sda.provider.BookFileProvider;
 import com.sda.util.DisplayUtil;
+import com.sda.view.MainMenuView;
+import com.sda.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,5 +35,9 @@ public class BooksViewController {
 
         return new DisplayUtil<String>().convertToMap(authorsAndTitles);
 
+    }
+
+    public View returnMainMenu(User loggedUser){
+        return new MainMenuView(loggedUser);
     }
 }
