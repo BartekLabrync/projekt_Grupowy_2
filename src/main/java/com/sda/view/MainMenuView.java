@@ -7,9 +7,9 @@ import com.sda.model.User;
 import java.util.*;
 
 public class MainMenuView implements View {
-    private User loggedUser;
-    private MainMenuController mainMenuController;
-    private Scanner scanner;
+    private final User loggedUser;
+    private final MainMenuController mainMenuController;
+    private final Scanner scanner;
 
     public MainMenuView(User loggedUser) {
         this.mainMenuController = new MainMenuController();
@@ -28,8 +28,7 @@ public class MainMenuView implements View {
     Integer getData() {
         System.out.println();
         System.out.println("podaj cyfre");
-        Integer option = scanner.nextInt();
-        return option;
+        return scanner.nextInt();
     }
 
 }

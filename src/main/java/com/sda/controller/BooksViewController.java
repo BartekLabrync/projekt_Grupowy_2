@@ -1,7 +1,6 @@
 package com.sda.controller;
 
 import com.sda.model.Book;
-import com.sda.model.MenuOption;
 import com.sda.model.User;
 import com.sda.provider.BookFileProvider;
 import com.sda.util.DisplayUtil;
@@ -12,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 public class BooksViewController {
     BookFileProvider bookFileProvider;
@@ -26,7 +24,7 @@ public class BooksViewController {
         List<String> authorsAndTitles = new ArrayList<>();
 
         for (Book book : books) {
-            authorsAndTitles.add(book.getAuthor() + ", \"" + book.getTitle() + '\"' );
+            authorsAndTitles.add(book.getAuthor() + ", \"" + book.getTitle() + '\"');
         }
 
 //        List<String> listOfBooks = bookFileProvider.getAllBooks().stream()
@@ -37,7 +35,7 @@ public class BooksViewController {
 
     }
 
-    public View returnMainMenu(User loggedUser){
+    public View returnMainMenu(User loggedUser) {
         return new MainMenuView(loggedUser);
     }
 }

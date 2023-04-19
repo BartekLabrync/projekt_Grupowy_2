@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public class MenuService {
 
-    public List<MenuOption> getMenuOptionsForUser(User loggedUser){
+    public List<MenuOption> getMenuOptionsForUser(User loggedUser) {
         return Arrays.stream(MenuOption.values())
                 .filter(menuOption -> loggedUser.getRoles().contains(menuOption.getNecessaryRole()))
                 .collect(Collectors.toList());
