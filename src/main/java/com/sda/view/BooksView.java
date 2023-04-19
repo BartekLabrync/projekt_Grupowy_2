@@ -1,13 +1,12 @@
 package com.sda.view;
 
 import com.sda.controller.BooksViewController;
-import com.sda.model.Book;
-import com.sda.model.MenuOption;
+
 
 import java.util.Map;
-import java.util.Set;
 
-public class BooksView implements View{
+
+public class BooksView implements View {
     private BooksViewController booksViewController;
 
     public BooksView() {

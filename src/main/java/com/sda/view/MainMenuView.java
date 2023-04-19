@@ -21,10 +21,10 @@ public class MainMenuView implements View {
     public void display() {
         Map<Integer, MenuOption> menuOptions = mainMenuController.getMenuOptions(loggedUser);
         menuOptions.forEach((key, menuOption) -> System.out.println(key + ". " + menuOption.getMessage()));
-        mainMenuController.getChoosenView(getData(),loggedUser).display();
+        mainMenuController.getChoosenView(getData(), loggedUser).display();
     }
 
-    Integer getData(){
+    Integer getData() {
         System.out.println();
         System.out.println("podaj cyfre");
         Integer option = scanner.nextInt();
