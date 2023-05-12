@@ -16,4 +16,8 @@ public class Address {
     private String apartmentNo;
     private String postalCode;
 
+    @Override
+    public String toString() {
+        return street + " " + buildingNo + ", " + postalCode;
+    }
 }
