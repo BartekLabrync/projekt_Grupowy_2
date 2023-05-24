@@ -14,10 +14,6 @@ public class UserDataController {
     private UserProvider userProvider;
 
     public Set<String> getAllUserLogins() {
-        // pobrać set<user> z userProvider
-        //przerobić na set<string> z loginami
-        // return set z loginami
-
         Set<User> users = userProvider.getAllUsers();
         Set<String> userLogins = users
                 .stream()
@@ -27,7 +23,6 @@ public class UserDataController {
     }
 
     public Optional<User> getUser(String login){
-        // chcemy pobrać usera o danym loginie
         return userProvider.getAllUsers().stream()
                 .filter(user -> user.getLogin().equals(login))
                 .findFirst();
