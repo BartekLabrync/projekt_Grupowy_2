@@ -31,11 +31,11 @@ public class MainMenuController {
             case DISPLAY_BOOKS:
                 return new BooksView(loggedUser);
             case DISPLAY_MY_DATA:
-                return new DataView();
+                return new DataView(loggedUser);
             case DISPLAY_USER_DATA:
-                return new UserDataView();
+                return new UserDataView(loggedUser);
             case DISPLAY_BOOKS_BY_AUTHOR:
-                return new AuthorView();
+                return new AuthorView(loggedUser);
             default:
                 return new MainMenuView(loggedUser);
         }

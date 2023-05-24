@@ -10,7 +10,7 @@ import java.util.Set;
 
 public class UserDataView implements View {
 
-    private UserDataController userDataController;
+    private final UserDataController userDataController;
     private final Scanner scanner;
     private final User loggedUser;
 
@@ -45,5 +45,11 @@ public class UserDataView implements View {
 
         userDataController.returnMainMenu(loggedUser).display();
 
+    }
+
+    public boolean isAdmin(){
+        if(loggedUser.getRoles().contains(Role.ADMIN))
+            return true;
+        return false;
     }
 }

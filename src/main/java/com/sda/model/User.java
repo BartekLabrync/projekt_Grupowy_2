@@ -21,4 +21,14 @@ public class User {
     private Address address;
     private List<Role> roles;
 
+    @Override
+    public String toString() {
+        return  "Name: " + name + '\n' +
+                "Last name:" + lastName + '\n' +
+                "Login: " + login + '\n' +
+                "Email: " + email + '\n' +
+                "Password: " + password + '\n' +
+                "Address: " + address + '\n' +
+                "Roles: " + roles;
+    }
 }

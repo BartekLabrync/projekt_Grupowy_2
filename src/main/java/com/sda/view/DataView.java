@@ -17,5 +17,8 @@ public class DataView implements View {
     @Override
     public void display() {
         System.out.println("Data");
+        System.out.println(loggedUser);
+
+        dataViewController.returnMainMenu(loggedUser).display();
     }
 }

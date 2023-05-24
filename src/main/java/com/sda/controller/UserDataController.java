@@ -11,7 +11,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class UserDataController {
-    private UserProvider userProvider;
+    private final UserProvider userProvider;
 
     public Set<String> getAllUserLogins() {
         Set<User> users = userProvider.getAllUsers();
