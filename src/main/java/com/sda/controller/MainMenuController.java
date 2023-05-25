@@ -27,7 +27,7 @@ public class MainMenuController {
         MenuOption selectedOption = getMenuOptions(loggedUser).get(option);
         switch (selectedOption) {
             case ADD_NEW_USER:
-                return new UserView();
+                return new UserView(loggedUser);
             case DISPLAY_BOOKS:
                 return new BooksView(loggedUser);
             case DISPLAY_MY_DATA:

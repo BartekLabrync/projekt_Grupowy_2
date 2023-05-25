@@ -5,9 +5,7 @@ import com.sda.model.Role;
 import com.sda.model.User;
 import lombok.NoArgsConstructor;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
@@ -21,6 +19,16 @@ public class UserFileProvider implements UserProvider {
 
     public UserFileProvider(String filePath) {
         this.filePath = filePath;
+    }
+
+    @Override
+    public void addNewUser(String line){
+        try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(filePath, true))){
+            bufferedWriter.append('\n');
+            bufferedWriter.append(line);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
